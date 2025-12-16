@@ -24,7 +24,7 @@
   "dependencies": {
     "three": "^0.160.0",
     "@jscad/modeling": "^2.12.0",
-    "@jscad/stl-serializer": "^2.3.0"
+    "@jscad/stl-serializer": "^2.1.13"
   },
   "devDependencies": {
     "gh-pages": "^6.1.0",
