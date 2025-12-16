@@ -1,0 +1,6 @@
+# Placeholder for generated STL files
+# This directory will be populated when running `npm run build`
+
+*.stl
+*.obj
+!.gitkeep

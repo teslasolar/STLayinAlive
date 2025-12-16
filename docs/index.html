@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STLayinAlive - Konomi Systems 3D Library</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>🎵 STLayinAlive</h1>
+      <p class="tagline">Konomi Systems 3D Printing STL Library</p>
+      <nav>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="https://github.com/teslasolar/STLayinAlive" target="_blank">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero">
+      <div class="container">
+        <h2>Parametric 3D Models with SCADA-Style Tag Provider</h2>
+        <p>Real-time parameter management for production-ready STL files</p>
+        <div class="hero-buttons">
+          <a href="#gallery" class="btn btn-primary">Browse Models</a>
+          <a href="https://github.com/teslasolar/STLayinAlive" class="btn btn-secondary">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <h2>Features</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>🔧 Parametric Design</h3>
+            <p>All models are fully parametric with adjustable dimensions and features</p>
+          </div>
+          <div class="feature-card">
+            <h3>🏷️ Tag Provider System</h3>
+            <p>SCADA-like real-time parameter management with subscriptions and validation</p>
+          </div>
+          <div class="feature-card">
+            <h3>📦 Ready to Print</h3>
+            <p>Download production-ready STL files optimized for 3D printing</p>
+          </div>
+          <div class="feature-card">
+            <h3>🔄 Auto-Generated</h3>
+            <p>STL files automatically regenerated on every commit via GitHub Actions</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <h2>Model Gallery</h2>
+        <div class="filter-bar">
+          <button class="filter-btn active" data-category="all">All</button>
+          <button class="filter-btn" data-category="brackets">Brackets</button>
+          <button class="filter-btn" data-category="konomiParts">Konomi Parts</button>
+          <button class="filter-btn" data-category="accessories">Accessories</button>
+        </div>
+        <div id="model-grid" class="model-grid">
+          <!-- Models loaded dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>About</h2>
+        <p>
+          STLayinAlive is a parametric 3D model library built for Konomi Systems. 
+          It features a unique SCADA-style tag provider system that enables real-time 
+          parameter management, making it perfect for industrial applications and 
+          rapid prototyping.
+        </p>
+        <p>
+          All models are defined programmatically using JSCAD and can be customized 
+          through simple parameter changes. The tag provider system allows for 
+          sophisticated parameter validation, history tracking, and real-time updates.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Konomi Systems | MIT License</p>
+      <p>Ahhh AHhhh ahhhh STLayin Alive 🎵</p>
+    </div>
+  </footer>
+
+  <script type="module" src="assets/main.js"></script>
+</body>
+</html>

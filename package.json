@@ -1,0 +1,34 @@
+{
+  "name": "stlayinalive",
+  "version": "1.0.0",
+  "description": "Konomi Systems 3D Printing STL Library with SCADA-style Tag Provider",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/generate-stls.js",
+    "dev": "node scripts/dev-server.js",
+    "preview": "node scripts/preview.js",
+    "deploy": "npm run build && gh-pages -d docs",
+    "watch": "node scripts/watch.js"
+  },
+  "keywords": [
+    "3d-printing",
+    "stl",
+    "cad",
+    "konomi-systems",
+    "scada",
+    "parametric-design"
+  ],
+  "author": "Konomi Systems",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.160.0",
+    "@jscad/modeling": "^2.12.0",
+    "@jscad/stl-serializer": "^2.3.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.0",
+    "chokidar": "^3.5.3",
+    "express": "^4.18.2"
+  }
+}

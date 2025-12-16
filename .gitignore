@@ -1,0 +1,9 @@
+node_modules/
+dist/*.stl
+dist/*.obj
+.DS_Store
+*.log
+.env
+.vscode/
+coverage/
+*.tmp
