@@ -22,10 +22,11 @@
   <main>
     <section id="hero">
       <div class="container">
-        <h2>Parametric 3D Models with SCADA-Style Tag Provider</h2>
-        <p>Real-time parameter management for production-ready STL files</p>
+        <h2>Parametric 3D Models with Multi-Agent AI</h2>
+        <p>SCADA-style tag provider + Konomi System (CPU-powered distributed intelligence)</p>
         <div class="hero-buttons">
           <a href="#gallery" class="btn btn-primary">Browse Models</a>
+          <a href="#konomi" class="btn btn-secondary">Konomi System</a>
           <a href="https://github.com/teslasolar/STLayinAlive" class="btn btn-secondary">View on GitHub</a>
         </div>
       </div>
@@ -44,13 +45,73 @@
             <p>SCADA-like real-time parameter management with subscriptions and validation</p>
           </div>
           <div class="feature-card">
+            <h3>🧬 Konomi System</h3>
+            <p>Multi-agent AI with eVGPU, FemtoLLM, BlockArray, and Cube coordination (NO GPU required!)</p>
+          </div>
+          <div class="feature-card">
             <h3>📦 Ready to Print</h3>
             <p>Download production-ready STL files optimized for 3D printing</p>
           </div>
           <div class="feature-card">
-            <h3>🔄 Auto-Generated</h3>
-            <p>STL files automatically regenerated on every commit via GitHub Actions</p>
+            <h3>⚡ CPU-Powered AI</h3>
+            <p>16-dim FemtoLLM + eVGPU tensor operations running entirely on CPU</p>
           </div>
+          <div class="feature-card">
+            <h3>📡 Real-time APIs</h3>
+            <p>REST + WebSocket APIs for multi-agent coordination and live updates</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="konomi">
+      <div class="container">
+        <h2>🧬 Konomi System - Multi-Agent AI</h2>
+        <p style="margin-bottom: 2rem;">CPU-powered distributed intelligence without GPUs</p>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>⚡ eVGPU</h3>
+            <p>CPU-based tensor operations using SIMD/vectorization</p>
+            <code style="font-size: 0.85rem;">matmul, conv, activation, pooling</code>
+          </div>
+          <div class="feature-card">
+            <h3>🧠 FemtoLLM</h3>
+            <p>16-dimensional nano AI model</p>
+            <code style="font-size: 0.85rem;">4MB RAM | 0.1s/req</code>
+          </div>
+          <div class="feature-card">
+            <h3>🧊 BlockArray</h3>
+            <p>1000³ sparse compute grid with LLM@coordinates</p>
+            <code style="font-size: 0.85rem;">Sparse storage | Efficient</code>
+          </div>
+          <div class="feature-card">
+            <h3>🎲 Cube</h3>
+            <p>9-agent node system</p>
+            <code style="font-size: 0.85rem;">8 vertices + 1 central</code>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; padding: 1.5rem; background: #f5f5f5; border-radius: 8px;">
+          <h3>Quick Example</h3>
+          <pre style="background: #fff; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>import { KonomiSystem } from './src/core/konomi-system.js';
+
+const konomi = new KonomiSystem();
+await konomi.initialize();
+
+// Create 100×100×100 BlockArray
+const ba = konomi.createBlockArray('main', [100, 100, 100]);
+ba.set(0, 0, 0, 1.0);
+
+// Create 9-agent Cube
+const cube = konomi.createCube('c1', [0, 0, 0]);
+await cube.coordinate("Optimize parameters");
+
+await konomi.shutdown();</code></pre>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+          <a href="https://github.com/teslasolar/STLayinAlive/blob/main/KONOMI_SYSTEM.md" class="btn btn-primary">Full Documentation</a>
         </div>
       </div>
     </section>
@@ -74,15 +135,29 @@
       <div class="container">
         <h2>About</h2>
         <p>
-          STLayinAlive is a parametric 3D model library built for Konomi Systems. 
-          It features a unique SCADA-style tag provider system that enables real-time 
-          parameter management, making it perfect for industrial applications and 
-          rapid prototyping.
+          STLayinAlive is a parametric 3D model library built for Konomi Systems.
+          It features a unique SCADA-style tag provider system AND the revolutionary
+          <strong>Konomi System</strong> - a multi-agent AI architecture that runs
+          entirely on CPU without any GPU dependency.
         </p>
         <p>
-          All models are defined programmatically using JSCAD and can be customized 
-          through simple parameter changes. The tag provider system allows for 
+          All models are defined programmatically using JSCAD and can be customized
+          through simple parameter changes. The tag provider system allows for
           sophisticated parameter validation, history tracking, and real-time updates.
+        </p>
+        <p>
+          The <strong>Konomi System</strong> brings distributed AI intelligence with:
+        </p>
+        <ul style="margin-left: 2rem;">
+          <li><strong>eVGPU</strong>: CPU-based tensor operations (matmul, conv, activation)</li>
+          <li><strong>FemtoLLM</strong>: 16-dim nano AI model (4MB RAM, 0.1s/req)</li>
+          <li><strong>BlockArray</strong>: 1000³ sparse compute grid with LLM@coordinates</li>
+          <li><strong>Cube</strong>: 9-agent coordination system (8 vertices + 1 central)</li>
+          <li><strong>APIs</strong>: REST (port 3001) + WebSocket (port 3002)</li>
+        </ul>
+        <p>
+          <strong>Performance:</strong> Runs on laptops, scales linearly with CPU cores,
+          processes 1M cubes efficiently, all without requiring expensive GPU hardware.
         </p>
       </div>
     </section>

@@ -1,58 +1,63 @@
 /**
  * Main JavaScript for STLayinAlive Gallery
+ * Auto-loads configuration from gallery-config.json
  */
 
-// Model catalog data
-const modelCatalog = [
-  {
-    id: 'mounting-bracket',
-    name: 'Mounting Bracket',
-    category: 'brackets',
-    description: 'Parametric mounting bracket with configurable holes',
-    icon: '🔩',
-    stlFile: '../dist/mounting-bracket.stl',
-    params: {
-      width: '50mm',
-      height: '30mm',
-      holes: 2
-    }
-  },
-  {
-    id: 'konomi-enclosure',
-    name: 'Konomi Enclosure',
-    category: 'konomiParts',
-    description: 'Electronics enclosure with ventilation',
-    icon: '📦',
-    stlFile: '../dist/konomi-enclosure.stl',
-    params: {
-      width: '100mm',
-      depth: '80mm',
-      height: '40mm'
-    }
-  },
-  {
-    id: 'cable-clip',
-    name: 'Cable Clip',
-    category: 'accessories',
-    description: 'Parametric cable management clip',
-    icon: '📎',
-    stlFile: '../dist/cable-clip.stl',
-    params: {
-      diameter: '6mm',
-      height: '10mm'
-    }
-  }
-];
-
-// Current filter
+let galleryConfig = null;
+let modelCatalog = [];
 let currentFilter = 'all';
 
 // Initialize on DOM load
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadGalleryConfig();
   renderModels();
   setupFilters();
   setupSmoothScroll();
 });
+
+/**
+ * Load gallery configuration from generated config file
+ */
+async function loadGalleryConfig() {
+  try {
+    const response = await fetch('../dist/gallery-config.json');
+    galleryConfig = await response.json();
+    modelCatalog = galleryConfig.models;
+    console.log('✓ Loaded gallery config:', galleryConfig);
+  } catch (error) {
+    console.error('Failed to load gallery config, using fallback:', error);
+    // Fallback to basic config
+    modelCatalog = [
+      {
+        id: 'mounting-bracket',
+        name: 'Mounting Bracket',
+        category: 'brackets',
+        description: 'Parametric mounting bracket with configurable holes',
+        icon: '🔩',
+        stlFile: '../dist/mounting-bracket.stl',
+        params: { width: '50mm', height: '30mm' }
+      },
+      {
+        id: 'konomi-enclosure',
+        name: 'Konomi Enclosure',
+        category: 'konomiParts',
+        description: 'Electronics enclosure with ventilation',
+        icon: '📦',
+        stlFile: '../dist/konomi-enclosure.stl',
+        params: { width: '100mm', depth: '80mm' }
+      },
+      {
+        id: 'cable-clip',
+        name: 'Cable Clip',
+        category: 'accessories',
+        description: 'Parametric cable management clip',
+        icon: '📎',
+        stlFile: '../dist/cable-clip.stl',
+        params: { diameter: '6mm' }
+      }
+    ];
+  }
+}
 
 /**
  * Render model cards
