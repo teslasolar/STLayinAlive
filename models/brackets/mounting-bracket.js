@@ -3,8 +3,8 @@
  * Demonstrates parametric model with tag provider integration
  */
 
-import { ModelBase } from '../core/model-base.js';
-import { createBox, createMountingHole, ops } from '../core/primitives.js';
+import { ModelBase } from '../../src/core/model-base.js';
+import { createBox, createMountingHole, ops } from '../../src/core/primitives.js';
 
 export class MountingBracket extends ModelBase {
   getDefaultParams() {

@@ -3,7 +3,8 @@
  * Wrapper functions for common 3D operations
  */
 
-import { primitives, booleans, transforms, extrusions } from '@jscad/modeling';
+import jscadModeling from '@jscad/modeling';
+const { primitives, booleans, transforms, extrusions } = jscadModeling;
 
 const { cube, cuboid, cylinder, sphere, roundedCuboid } = primitives;
 const { union, subtract, intersect } = booleans;

@@ -1,0 +1,47 @@
+{
+  "generated": "2025-12-16T06:18:28.370Z",
+  "models": [
+    {
+      "name": "mounting-bracket",
+      "filename": "mounting-bracket.stl",
+      "size": 3,
+      "params": {
+        "width": 50,
+        "height": 30,
+        "thickness": 3,
+        "holeCount": 2,
+        "holeDiameter": 5,
+        "holeSpacing": 30
+      }
+    },
+    {
+      "name": "enclosure",
+      "filename": "enclosure.stl",
+      "size": 3,
+      "params": {
+        "width": 100,
+        "depth": 80,
+        "height": 40,
+        "wallThickness": 2,
+        "ventHoleSize": 3,
+        "ventHoleSpacing": 6,
+        "mountingHoles": true,
+        "cornerRadius": 3
+      }
+    },
+    {
+      "name": "cable-clip",
+      "filename": "cable-clip.stl",
+      "size": 3,
+      "params": {
+        "cableDiameter": 6,
+        "clipThickness": 2,
+        "clipHeight": 10,
+        "baseWidth": 15,
+        "baseThickness": 3,
+        "screwHoleDiameter": 3
+      }
+    }
+  ],
+  "count": 3
+}

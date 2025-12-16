@@ -2,10 +2,4 @@
  * Model exporters
  */
 
-export { exportSTL, saveSTL, saveSTLNode } from './stl-exporter.js';
-
-export default {
-  exportSTL,
-  saveSTL,
-  saveSTLNode
-};
+export * from './stl-exporter.js';

@@ -3,7 +3,8 @@
  * Export JSCAD geometry to STL format
  */
 
-import { serialize } from '@jscad/stl-serializer';
+import stlSerializer from '@jscad/stl-serializer';
+const { serialize } = stlSerializer;
 
 /**
  * Export geometry to STL format
