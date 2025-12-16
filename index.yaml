@@ -1,0 +1,203 @@
+# STLayinAlive Model Configuration
+# Auto-loaded by the system - no hardcoding needed!
+
+# Global settings
+settings:
+  library_name: "STLayinAlive"
+  library_description: "Konomi Systems 3D Printing STL Library"
+  output_dir: "dist"
+  docs_dir: "docs"
+  base_url: "https://teslasolar.github.io/STLayinAlive"
+
+# Category definitions
+categories:
+  - id: brackets
+    name: Brackets
+    description: Mounting brackets and supports
+    icon: "🔩"
+    
+  - id: konomiParts
+    name: Konomi Parts
+    description: Konomi Systems specific components
+    icon: "📦"
+    
+  - id: accessories
+    name: Accessories
+    description: Cable management and misc accessories
+    icon: "📎"
+
+# Model definitions
+models:
+  # Mounting Bracket
+  - id: mounting-bracket
+    name: Mounting Bracket
+    category: brackets
+    description: Parametric mounting bracket with configurable holes
+    module: models/brackets/mounting-bracket.js
+    class: MountingBracket
+    icon: "🔩"
+    tags:
+      - mounting
+      - hardware
+      - bracket
+    params:
+      width:
+        value: 50
+        unit: mm
+        min: 10
+        max: 200
+        description: Bracket width
+      height:
+        value: 30
+        unit: mm
+        min: 10
+        max: 100
+        description: Bracket height
+      thickness:
+        value: 3
+        unit: mm
+        min: 1
+        max: 10
+        description: Material thickness
+      holeCount:
+        value: 2
+        unit: ""
+        min: 1
+        max: 10
+        description: Number of mounting holes
+      holeDiameter:
+        value: 5
+        unit: mm
+        min: 2
+        max: 20
+        description: Hole diameter
+      holeSpacing:
+        value: 30
+        unit: mm
+        min: 10
+        max: 100
+        description: Distance between holes
+
+  # Konomi Enclosure
+  - id: konomi-enclosure
+    name: Konomi Enclosure
+    category: konomiParts
+    description: Electronics enclosure with ventilation holes
+    module: models/konomi-parts/enclosure.js
+    class: KonomiEnclosure
+    icon: "📦"
+    tags:
+      - enclosure
+      - electronics
+      - konomi
+    params:
+      width:
+        value: 100
+        unit: mm
+        min: 50
+        max: 300
+        description: Internal width
+      depth:
+        value: 80
+        unit: mm
+        min: 50
+        max: 300
+        description: Internal depth
+      height:
+        value: 40
+        unit: mm
+        min: 20
+        max: 150
+        description: Internal height
+      wallThickness:
+        value: 2
+        unit: mm
+        min: 1
+        max: 5
+        description: Wall thickness
+      ventHoleSize:
+        value: 3
+        unit: mm
+        min: 1
+        max: 10
+        description: Ventilation hole diameter
+      ventHoleSpacing:
+        value: 6
+        unit: mm
+        min: 3
+        max: 20
+        description: Spacing between vent holes
+      mountingHoles:
+        value: true
+        unit: ""
+        description: Include corner mounting holes
+      cornerRadius:
+        value: 3
+        unit: mm
+        min: 0
+        max: 10
+        description: Corner rounding radius
+
+  # Cable Clip
+  - id: cable-clip
+    name: Cable Clip
+    category: accessories
+    description: Parametric cable management clip
+    module: models/accessories/cable-clip.js
+    class: CableClip
+    icon: "📎"
+    tags:
+      - cable
+      - clip
+      - management
+    params:
+      cableDiameter:
+        value: 6
+        unit: mm
+        min: 2
+        max: 20
+        description: Cable diameter to hold
+      clipThickness:
+        value: 2
+        unit: mm
+        min: 1
+        max: 5
+        description: Clip wall thickness
+      clipHeight:
+        value: 10
+        unit: mm
+        min: 5
+        max: 30
+        description: Clip height
+      baseWidth:
+        value: 15
+        unit: mm
+        min: 10
+        max: 40
+        description: Base mounting plate width
+      baseThickness:
+        value: 3
+        unit: mm
+        min: 2
+        max: 10
+        description: Base plate thickness
+      screwHoleDiameter:
+        value: 3
+        unit: mm
+        min: 2
+        max: 8
+        description: Mounting screw hole diameter
+
+# Print settings (optional metadata)
+print_settings:
+  default_material: PLA
+  default_layer_height: 0.2
+  default_infill: 20
+  supports: auto
+  
+# Tag provider defaults
+tag_provider:
+  enable_history: true
+  enable_alarms: true
+  enable_quality_tracking: true
+  history_limit: 1000

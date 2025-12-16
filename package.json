@@ -9,7 +9,9 @@
     "dev": "node scripts/dev-server.js",
     "preview": "node scripts/preview.js",
     "deploy": "npm run build && gh-pages -d docs",
-    "watch": "node scripts/watch.js"
+    "watch": "node scripts/watch.js",
+    "api": "node src/api/server.js",
+    "start": "npm run api"
   },
   "keywords": [
     "3d-printing",
@@ -24,11 +26,12 @@
   "dependencies": {
     "three": "^0.160.0",
     "@jscad/modeling": "^2.12.0",
-    "@jscad/stl-serializer": "^2.1.13"
+    "@jscad/stl-serializer": "^2.1.13",
+    "express": "^4.18.2",
+    "ws": "^8.14.2"
   },
   "devDependencies": {
     "gh-pages": "^6.1.0",
-    "chokidar": "^3.5.3",
-    "express": "^4.18.2"
+    "chokidar": "^3.5.3"
   }
 }

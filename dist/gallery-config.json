@@ -1,0 +1,96 @@
+{
+  "settings": {
+    "library_name": "STLayinAlive",
+    "library_description": "Konomi Systems 3D Printing STL Library",
+    "output_dir": "dist",
+    "docs_dir": "docs",
+    "base_url": "https://teslasolar.github.io/STLayinAlive"
+  },
+  "categories": [
+    {
+      "id": "brackets",
+      "name": "Brackets",
+      "description": "Mounting brackets and supports",
+      "icon": "🔩"
+    },
+    {
+      "id": "konomiParts",
+      "name": "Konomi Parts",
+      "description": "Konomi Systems specific components",
+      "icon": "📦"
+    },
+    {
+      "id": "accessories",
+      "name": "Accessories",
+      "description": "Cable management and misc accessories",
+      "icon": "📎"
+    }
+  ],
+  "models": [
+    {
+      "id": "mounting-bracket",
+      "name": "Mounting Bracket",
+      "category": "brackets",
+      "description": "Parametric mounting bracket with configurable holes",
+      "icon": "🔩",
+      "tags": [
+        "mounting",
+        "hardware",
+        "bracket"
+      ],
+      "stlFile": "../dist/mounting-bracket.stl",
+      "params": {
+        "width": "50mm",
+        "height": "30mm",
+        "thickness": "3mm",
+        "holeCount": "2",
+        "holeDiameter": "5mm",
+        "holeSpacing": "30mm"
+      }
+    },
+    {
+      "id": "konomi-enclosure",
+      "name": "Konomi Enclosure",
+      "category": "konomiParts",
+      "description": "Electronics enclosure with ventilation holes",
+      "icon": "📦",
+      "tags": [
+        "enclosure",
+        "electronics",
+        "konomi"
+      ],
+      "stlFile": "../dist/konomi-enclosure.stl",
+      "params": {
+        "width": "100mm",
+        "depth": "80mm",
+        "height": "40mm",
+        "wallThickness": "2mm",
+        "ventHoleSize": "3mm",
+        "ventHoleSpacing": "6mm",
+        "mountingHoles": "true",
+        "cornerRadius": "3mm"
+      }
+    },
+    {
+      "id": "cable-clip",
+      "name": "Cable Clip",
+      "category": "accessories",
+      "description": "Parametric cable management clip",
+      "icon": "📎",
+      "tags": [
+        "cable",
+        "clip",
+        "management"
+      ],
+      "stlFile": "../dist/cable-clip.stl",
+      "params": {
+        "cableDiameter": "6mm",
+        "clipThickness": "2mm",
+        "clipHeight": "10mm",
+        "baseWidth": "15mm",
+        "baseThickness": "3mm",
+        "screwHoleDiameter": "3mm"
+      }
+    }
+  ]
+}

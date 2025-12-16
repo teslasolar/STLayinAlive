@@ -3,18 +3,17 @@
 /**
  * Generate STL files from all models
  * This script is run by CI/CD and can be run locally
+ * Now uses index.yaml for configuration - no hardcoding!
  */
 
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { loadConfig, buildModelRegistry } from '../src/core/config-loader.js';
+import { saveSTLNode } from '../src/exporters/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-// Import models
-import { ModelRegistry } from '../models/index.js';
-import { saveSTLNode } from '../src/exporters/index.js';
 
 const DIST_DIR = path.join(__dirname, '..', 'dist');
 
@@ -27,18 +26,24 @@ async function ensureDistDir() {
   }
 }
 
-async function generateSTL(name, ModelClass, category) {
+async function generateSTL(modelConfig, ModelClass) {
   try {
-    console.log(`\nGenerating ${name}...`);
+    console.log(`\nGenerating ${modelConfig.id}...`);
     
-    // Create model instance with default parameters
-    const model = new ModelClass();
+    // Build default params from config
+    const defaultParams = {};
+    for (const [key, paramConfig] of Object.entries(modelConfig.params)) {
+      defaultParams[key] = paramConfig.value;
+    }
+    
+    // Create model instance with configured parameters
+    const model = new ModelClass(defaultParams);
     
     // Generate geometry
     const geometry = model.generate();
     
     // Export to STL
-    const filename = `${name}.stl`;
+    const filename = `${modelConfig.id}.stl`;
     const filepath = path.join(DIST_DIR, filename);
     
     await saveSTLNode(geometry, filepath);
@@ -50,27 +55,55 @@ async function generateSTL(name, ModelClass, category) {
     console.log(`  ✓ Generated ${filename} (${sizeMB} MB)`);
     console.log(`  Parameters:`, model.params);
     
-    return { name, filename, size: stats.size, params: model.params };
+    return { 
+      id: modelConfig.id,
+      name: modelConfig.name,
+      filename, 
+      size: stats.size, 
+      params: model.params,
+      category: modelConfig.category
+    };
   } catch (error) {
-    console.error(`  ✗ Error generating ${name}:`, error.message);
+    console.error(`  ✗ Error generating ${modelConfig.id}:`, error.message);
     return null;
   }
 }
 
 async function generateAllSTLs() {
-  console.log('🎵 STLayinAlive - STL Generation\n');
-  console.log('================================\n');
+  console.log('🎵 STLayinAlive - STL Generation (YAML-Driven)\n');
+  console.log('================================================\n');
   
   await ensureDistDir();
   
+  // Load configuration from index.yaml
+  console.log('📋 Loading configuration from index.yaml...');
+  const config = await loadConfig();
+  console.log(`✓ Loaded ${config.models.length} model(s) from config\n`);
+  
+  // Build model registry
+  const registry = await buildModelRegistry(config);
+  
   const results = [];
   
+  // Group by category for display
+  const categorized = {};
+  for (const modelConfig of config.models) {
+    if (!categorized[modelConfig.category]) {
+      categorized[modelConfig.category] = [];
+    }
+    categorized[modelConfig.category].push(modelConfig);
+  }
+  
   // Generate STLs for all models
-  for (const [categoryName, models] of Object.entries(ModelRegistry)) {
-    console.log(`\n📁 Category: ${categoryName}`);
+  for (const [categoryId, models] of Object.entries(categorized)) {
+    const categoryInfo = config.categories.find(c => c.id === categoryId);
+    const categoryName = categoryInfo ? categoryInfo.name : categoryId;
     
-    for (const [modelName, ModelClass] of Object.entries(models)) {
-      const result = await generateSTL(modelName, ModelClass, categoryName);
+    console.log(`\n${categoryInfo?.icon || '📁'} Category: ${categoryName}`);
+    
+    for (const modelConfig of models) {
+      const ModelClass = registry[categoryId][modelConfig.id].ModelClass;
+      const result = await generateSTL(modelConfig, ModelClass);
       if (result) {
         results.push(result);
       }
@@ -80,8 +113,11 @@ async function generateAllSTLs() {
   // Generate manifest file
   const manifest = {
     generated: new Date().toISOString(),
+    config_source: 'index.yaml',
     models: results,
-    count: results.length
+    count: results.length,
+    categories: config.categories,
+    settings: config.settings
   };
   
   await fs.writeFile(
@@ -89,9 +125,37 @@ async function generateAllSTLs() {
     JSON.stringify(manifest, null, 2)
   );
   
-  console.log('\n================================');
-  console.log(`\n✓ Generated ${results.length} STL files`);
-  console.log(`✓ Manifest created: dist/manifest.json`);
+  // Generate gallery config
+  const galleryConfig = {
+    settings: config.settings,
+    categories: config.categories,
+    models: results.map(r => {
+      const modelConfig = config.models.find(m => m.id === r.id);
+      return {
+        id: r.id,
+        name: r.name,
+        category: r.category,
+        description: modelConfig.description,
+        icon: modelConfig.icon,
+        tags: modelConfig.tags,
+        stlFile: `../dist/${r.filename}`,
+        params: Object.entries(modelConfig.params).reduce((acc, [key, cfg]) => {
+          acc[key] = `${cfg.value}${cfg.unit}`;
+          return acc;
+        }, {})
+      };
+    })
+  };
+  
+  await fs.writeFile(
+    path.join(DIST_DIR, 'gallery-config.json'),
+    JSON.stringify(galleryConfig, null, 2)
+  );
+  
+  console.log('\n================================================');
+  console.log(`\n✓ Generated ${results.length} STL file(s)`);
+  console.log(`✓ Manifest: dist/manifest.json`);
+  console.log(`✓ Gallery config: dist/gallery-config.json`);
   console.log('\n🎵 Ahhh AHhhh ahhhh STLayin Alive!\n');
 }
 
