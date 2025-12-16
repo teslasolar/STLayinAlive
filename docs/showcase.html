@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STLayinAlive - Full Showcase</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .showcase-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .showcase-section {
+      min-height: 100vh;
+      border-bottom: 2px solid var(--border);
+      position: relative;
+    }
+
+    .section-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-header h2 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .section-header p {
+      margin: 0.5rem 0 0 0;
+      opacity: 0.9;
+    }
+
+    .iframe-container {
+      width: 100%;
+      height: calc(100vh - 100px);
+      border: none;
+      background: var(--background);
+    }
+
+    .iframe-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .split-view {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      padding: 1rem;
+      height: calc(100vh - 120px);
+    }
+
+    .split-panel {
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .split-panel iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+    }
+
+    .demo-card {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      min-height: 300px;
+    }
+
+    .demo-card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    .demo-card pre {
+      background: var(--background);
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-size: 0.85rem;
+    }
+
+    .demo-card code {
+      color: var(--text);
+    }
+
+    .quick-nav {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 200;
+      background: rgba(15, 23, 42, 0.95);
+      padding: 1rem;
+      border-radius: 8px;
+      border: 2px solid var(--border);
+    }
+
+    .quick-nav a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-left: 3px solid transparent;
+      transition: all 0.3s;
+      font-size: 0.9rem;
+    }
+
+    .quick-nav a:hover {
+      color: var(--primary);
+      border-left-color: var(--primary);
+      padding-left: 1.5rem;
+    }
+
+    .stats-panel {
+      background: var(--surface);
+      padding: 2rem;
+      margin: 1rem;
+      border-radius: 8px;
+      border: 2px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .stat-card {
+      background: var(--background);
+      padding: 1.5rem;
+      border-radius: 6px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .stat-card .value {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin: 0.5rem 0;
+    }
+
+    .stat-card .label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .split-view {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .split-panel {
+        height: 400px;
+      }
+
+      .quick-nav {
+        display: none;
+      }
+
+      .demo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="quick-nav">
+    <a href="#main-site">🏠 Main Site</a>
+    <a href="#gallery">🖼️ Gallery</a>
+    <a href="#konomi">🧬 Konomi</a>
+    <a href="#viewer">👁️ Viewer</a>
+    <a href="#docs">📚 Docs</a>
+    <a href="#api">⚡ API</a>
+  </div>
+
+  <div class="showcase-container">
+    <!-- Section 1: Main Site -->
+    <div class="showcase-section" id="main-site">
+      <div class="section-header">
+        <h2>🎵 STLayinAlive - Main Site</h2>
+        <p>Interactive 3D model gallery with Konomi System integration</p>
+      </div>
+      <div class="iframe-container">
+        <iframe src="index.html" title="STLayinAlive Main Site"></iframe>
+      </div>
+    </div>
+
+    <!-- Section 2: Gallery View -->
+    <div class="showcase-section" id="gallery">
+      <div class="section-header">
+        <h2>🖼️ Model Gallery</h2>
+        <p>Browse all parametric 3D models with live filtering</p>
+      </div>
+      <div class="iframe-container">
+        <iframe src="index.html#gallery" title="Model Gallery"></iframe>
+      </div>
+    </div>
+
+    <!-- Section 3: Split View - Konomi System -->
+    <div class="showcase-section" id="konomi">
+      <div class="section-header">
+        <h2>🧬 Konomi System - Multi-Agent AI</h2>
+        <p>CPU-powered distributed intelligence (eVGPU, FemtoLLM, BlockArray, Cube)</p>
+      </div>
+      <div class="split-view">
+        <div class="split-panel">
+          <iframe src="index.html#konomi" title="Konomi System Overview"></iframe>
+        </div>
+        <div class="split-panel" style="background: var(--background); padding: 1rem; overflow-y: auto;">
+          <h3 style="margin-top: 0; color: var(--primary);">🚀 Quick Start</h3>
+          <pre><code>import { KonomiSystem } from './src/core/konomi-system.js';
+
+// Initialize
+const konomi = new KonomiSystem();
+await konomi.initialize();
+
+// Create BlockArray
+const ba = konomi.createBlockArray('demo', [100, 100, 100]);
+ba.set(0, 0, 0, 1.0);
+
+// Create Cube
+const cube = konomi.createCube('c1', [0, 0, 0]);
+await cube.coordinate("Process task");
+
+// Stats
+console.log(konomi.getStats());</code></pre>
+
+          <h3 style="color: var(--primary); margin-top: 2rem;">📡 REST API</h3>
+          <pre><code># Create BlockArray
+curl -X POST http://localhost:3001/api/template/create \
+  -H "Content-Type: application/json" \
+  -d '{"id": "test", "dimensions": [10,10,10]}'
+
+# Set value
+curl -X POST http://localhost:3001/api/value \
+  -H "Content-Type: application/json" \
+  -d '{"arrayId": "test", "x": 0, "y": 0, "z": 0, "value": 1.0}'
+
+# Get stats
+curl http://localhost:3001/api/stats</code></pre>
+
+          <h3 style="color: var(--primary); margin-top: 2rem;">🔌 WebSocket API</h3>
+          <pre><code>const ws = new WebSocket('ws://localhost:3002');
+
+ws.onopen = () => {
+  ws.send(JSON.stringify({
+    action: 'initialize',
+    type: 'cube',
+    id: 'demo',
+    position: [0, 0, 0]
+  }));
+
+  ws.send(JSON.stringify({
+    action: 'process',
+    cubeId: 'demo',
+    vertex: 'NEU',
+    text: 'Process this'
+  }));
+};</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: 3D Viewer -->
+    <div class="showcase-section" id="viewer">
+      <div class="section-header">
+        <h2>👁️ Interactive 3D Viewer</h2>
+        <p>Real-time parameter editing with SCADA tag provider system</p>
+      </div>
+      <div class="iframe-container">
+        <iframe src="viewer.html?model=konomi-demo-cube" title="3D Viewer"></iframe>
+      </div>
+    </div>
+
+    <!-- Section 5: Documentation Grid -->
+    <div class="showcase-section" id="docs">
+      <div class="section-header">
+        <h2>📚 Documentation & Examples</h2>
+        <p>Comprehensive guides, tutorials, and code examples</p>
+      </div>
+      <div class="demo-grid">
+        <div class="demo-card">
+          <h3>🏷️ Tag Provider System</h3>
+          <p>SCADA-style real-time parameter management</p>
+          <pre><code>import { TagProvider } from './src/tag-provider/index.js';
+
+const tags = new TagProvider();
+
+// Subscribe to changes
+tags.subscribe('bracket.width', (value) => {
+  regenerateModel({ width: value });
+});
+
+// Update values
+tags.setValue('bracket.width', 50);</code></pre>
+        </div>
+
+        <div class="demo-card">
+          <h3>⚡ eVGPU - CPU Tensors</h3>
+          <p>GPU operations without GPU hardware</p>
+          <pre><code>import { eVGPU } from './src/core/evgpu.js';
+
+const gpu = new eVGPU(4); // 4 CPU cores
+
+// Matrix multiplication
+const a = [[1, 2], [3, 4]];
+const b = [[5, 6], [7, 8]];
+const result = gpu.matmul(a, b);
+
+// Activation
+const activated = gpu.activate(result, 'relu');</code></pre>
+        </div>
+
+        <div class="demo-card">
+          <h3>🧠 FemtoLLM - Nano AI</h3>
+          <p>16-dimensional language model (4MB RAM)</p>
+          <pre><code>import { FemtoLLM } from './src/core/femto-llm.js';
+
+const llm = new FemtoLLM({
+  hiddenSize: 16,
+  vocabSize: 256
+});
+
+const result = await llm.process(
+  "Optimize parameters",
+  { temperature: 0.7 }
+);
+
+console.log(result.embedding);</code></pre>
+        </div>
+
+        <div class="demo-card">
+          <h3>🧊 BlockArray - Sparse Grid</h3>
+          <p>1000³ compute grid with LLM placement</p>
+          <pre><code>import { BlockArray } from './src/core/block-array.js';
+
+const ba = new BlockArray([1000, 1000, 1000]);
+
+// Set values
+ba.set(0, 0, 0, 1.0);
+
+// Place LLM at coordinate
+ba.placeLLM(0, 0, 0);
+
+// Process at location
+const result = await ba.processAt(
+  0, 0, 0,
+  "Analyze position"
+);</code></pre>
+        </div>
+
+        <div class="demo-card">
+          <h3>🎲 Cube - 9-Agent System</h3>
+          <p>8 vertices + 1 central coordinator</p>
+          <pre><code>import { Cube } from './src/core/cube.js';
+
+const cube = new Cube('c1', [0, 0, 0]);
+
+// Connect vertices
+cube.connect('NEU', 'SWD');
+cube.connect('NWU', 'SED');
+
+// Process at vertex
+await cube.processVertex('NEU', "Task");
+
+// Coordinate all vertices
+const result = await cube.coordinate(
+  "Optimize system"
+);</code></pre>
+        </div>
+
+        <div class="demo-card">
+          <h3>📦 Creating Models</h3>
+          <p>Build parametric 3D models with JSCAD</p>
+          <pre><code>import { ModelBase } from './src/core/model-base.js';
+
+export class MyPart extends ModelBase {
+  constructor(params = {}) {
+    super('my-part', params);
+    this.registerTags(['width', 'height']);
+  }
+
+  generate() {
+    const { width, height } = this.params;
+    // Generate 3D geometry
+    return geometry;
+  }
+}</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 6: System Stats -->
+    <div class="showcase-section" id="api">
+      <div class="section-header">
+        <h2>⚡ Live System Statistics</h2>
+        <p>Real-time Konomi System performance metrics</p>
+      </div>
+      <div class="stats-panel">
+        <h3 style="margin-top: 0;">📊 Architecture Overview</h3>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="label">eVGPU Cores</div>
+            <div class="value">4</div>
+            <div class="label">CPU-based tensor ops</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">FemtoLLM Size</div>
+            <div class="value">16</div>
+            <div class="label">Hidden dimensions</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">BlockArray Max</div>
+            <div class="value">1000³</div>
+            <div class="label">Sparse compute grid</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">Cube Agents</div>
+            <div class="value">9</div>
+            <div class="label">8 vertices + 1 central</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">RAM Usage</div>
+            <div class="value">4MB</div>
+            <div class="label">Per FemtoLLM instance</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">Processing Speed</div>
+            <div class="value">0.1s</div>
+            <div class="label">Per request</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 3rem;">🔧 Technology Stack</h3>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="label">3D Modeling</div>
+            <div class="value">JSCAD</div>
+            <div class="label">@jscad/modeling ^2.12.0</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">3D Rendering</div>
+            <div class="value">Three.js</div>
+            <div class="label">three ^0.160.0</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">REST API</div>
+            <div class="value">Express</div>
+            <div class="label">Port 3001</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">WebSocket</div>
+            <div class="value">ws</div>
+            <div class="label">Port 3002</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">Format</div>
+            <div class="value">STL</div>
+            <div class="label">@jscad/stl-serializer</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">Config</div>
+            <div class="value">YAML</div>
+            <div class="label">yaml ^2.3.4</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 3rem;">📡 API Endpoints</h3>
+        <div style="background: var(--background); padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
+          <h4 style="color: var(--primary); margin-top: 0;">REST API (Port 3001)</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li>✅ <code>GET /health</code> - Health check</li>
+            <li>✅ <code>GET /api/stats</code> - System statistics</li>
+            <li>✅ <code>POST /api/template/create</code> - Create BlockArray</li>
+            <li>✅ <code>POST /api/value</code> - Set value in BlockArray</li>
+            <li>✅ <code>GET /api/value</code> - Get value from BlockArray</li>
+            <li>✅ <code>POST /api/cube/:id/process</code> - Process at Cube vertex</li>
+            <li>✅ <code>POST /api/cube/:id/coordinate</code> - Coordinate all vertices</li>
+            <li>✅ <code>POST /api/parallel</code> - Execute parallel tasks</li>
+          </ul>
+
+          <h4 style="color: var(--primary); margin-top: 2rem;">WebSocket API (Port 3002)</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li>🔌 <code>action: initialize</code> - Create BlockArray or Cube</li>
+            <li>🔌 <code>action: process</code> - Process text at coordinate</li>
+            <li>🔌 <code>action: connect</code> - Connect Cube vertices</li>
+            <li>🔌 <code>action: coordinate</code> - Coordinate Cube task</li>
+            <li>🔌 <code>action: stats</code> - Get live statistics</li>
+            <li>🔌 <code>action: status</code> - Get entity status</li>
+          </ul>
+        </div>
+
+        <h3 style="margin-top: 3rem;">🎯 Key Features</h3>
+        <div class="demo-grid">
+          <div class="demo-card">
+            <h4 style="margin-top: 0;">🚫 NO GPU Required</h4>
+            <p>All tensor operations run on CPU using SIMD/vectorization. Perfect for edge devices, laptops, and servers without GPU hardware.</p>
+          </div>
+          <div class="demo-card">
+            <h4 style="margin-top: 0;">📈 Sparse Storage</h4>
+            <p>BlockArray uses Map-based sparse storage. Only active cubes consume memory, enabling efficient 1000³ grids.</p>
+          </div>
+          <div class="demo-card">
+            <h4 style="margin-top: 0;">🔄 Real-time Updates</h4>
+            <p>WebSocket API provides live bidirectional communication for parameter changes and model regeneration.</p>
+          </div>
+          <div class="demo-card">
+            <h4 style="margin-top: 0;">🏷️ SCADA Tags</h4>
+            <p>Industrial-grade tag provider system with subscriptions, history tracking, and validation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 3rem; text-align: center; color: white;">
+      <h2 style="margin: 0; font-size: 2.5rem;">🎵 Ahhh AHhhh ahhhh STLayin Alive! 🎵</h2>
+      <p style="margin: 1rem 0; font-size: 1.2rem;">Konomi Systems 3D Printing STL Library</p>
+      <div style="margin-top: 2rem;">
+        <a href="https://github.com/teslasolar/STLayinAlive"
+           style="display: inline-block; padding: 1rem 2rem; background: white; color: #764ba2; border-radius: 8px; text-decoration: none; font-weight: bold; margin: 0 0.5rem;">
+          View on GitHub
+        </a>
+        <a href="index.html"
+           style="display: inline-block; padding: 1rem 2rem; background: rgba(255,255,255,0.2); color: white; border: 2px solid white; border-radius: 8px; text-decoration: none; font-weight: bold; margin: 0 0.5rem;">
+          Back to Main Site
+        </a>
+      </div>
+      <p style="margin-top: 2rem; opacity: 0.8;">
+        MIT License &copy; 2025 Konomi Systems
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Smooth scroll for navigation
+    document.querySelectorAll('.quick-nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Highlight active section in navigation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          document.querySelectorAll('.quick-nav a').forEach(link => {
+            link.style.borderLeftColor =
+              link.getAttribute('href') === `#${id}` ? 'var(--primary)' : 'transparent';
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.showcase-section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>

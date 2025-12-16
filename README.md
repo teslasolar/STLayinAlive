@@ -180,6 +180,14 @@ export class MyPart extends ModelBase {
 
 View the live gallery at: `https://teslasolar.github.io/STLayinAlive/`
 
+**🎬 Full Showcase**: `https://teslasolar.github.io/STLayinAlive/showcase.html`
+- Interactive iframe-based demo of all features
+- Live model gallery with filtering
+- Konomi System documentation and examples
+- 3D viewer with parameter editing
+- Complete API reference and code examples
+- Real-time system statistics
+
 ## 📄 License
 
 MIT © Konomi Systems 
