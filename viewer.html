@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Viewer - STLayinAlive</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    #viewer-container {
+      width: 100%;
+      height: 600px;
+      background: var(--surface);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #viewer-controls {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      z-index: 10;
+    }
+
+    .control-group {
+      margin-bottom: 1rem;
+    }
+
+    .control-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .control-group input[type="range"] {
+      width: 100%;
+    }
+
+    #model-info {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: var(--surface);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+    }
+
+    .param-editor {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .param-input {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .param-input label {
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .param-input input {
+      padding: 0.5rem;
+      background: var(--background);
+      border: 1px solid var(--border);
+      border-radius: 0.25rem;
+      color: var(--text);
+    }
+
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="index.html" style="text-decoration: none; color: inherit;">🎵 STLayinAlive</a></h1>
+      <p class="tagline">3D Model Viewer</p>
+    </div>
+  </header>
+
+  <main>
+    <section style="padding: 2rem 0;">
+      <div class="container">
+        <div id="viewer-container">
+          <div class="loading">
+            Loading 3D viewer... 🔄
+            <br><br>
+            <small>Note: Three.js viewer implementation coming soon!</small>
+          </div>
+          <div id="viewer-controls" style="display: none;">
+            <div class="control-group">
+              <label>Rotation Speed</label>
+              <input type="range" id="rotation-speed" min="0" max="10" value="1">
+            </div>
+            <div class="control-group">
+              <label>Zoom</label>
+              <input type="range" id="zoom-level" min="1" max="10" value="5">
+            </div>
+            <button class="btn btn-small btn-primary" onclick="resetCamera()">Reset View</button>
+          </div>
+        </div>
+
+        <div id="model-info">
+          <h2 id="model-name">Model Name</h2>
+          <p id="model-description">Model description</p>
+          
+          <h3 style="margin-top: 2rem;">Parameters (SCADA Tag System)</h3>
+          <div id="param-editor" class="param-editor">
+            <!-- Parameters loaded dynamically -->
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <button class="btn btn-primary" onclick="regenerateModel()">Regenerate Model</button>
+            <button class="btn btn-secondary" onclick="exportSTL()">Export STL</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Konomi Systems | <a href="index.html">Back to Gallery</a></p>
+    </div>
+  </footer>
+
+  <script type="module">
+    // Get model ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const modelId = urlParams.get('model');
+
+    // Load model info
+    if (modelId) {
+      loadModelInfo(modelId);
+    }
+
+    function loadModelInfo(id) {
+      // Placeholder - would fetch from model catalog
+      document.getElementById('model-name').textContent = id.replace(/-/g, ' ');
+      document.getElementById('model-description').textContent = 
+        'Interactive 3D viewer with real-time parameter editing via tag provider system.';
+      
+      // Create parameter inputs
+      const paramEditor = document.getElementById('param-editor');
+      const sampleParams = {
+        width: { value: 50, min: 10, max: 200, unit: 'mm' },
+        height: { value: 30, min: 10, max: 100, unit: 'mm' },
+        thickness: { value: 3, min: 1, max: 10, unit: 'mm' }
+      };
+
+      Object.entries(sampleParams).forEach(([name, config]) => {
+        const input = createParamInput(name, config);
+        paramEditor.appendChild(input);
+      });
+    }
+
+    function createParamInput(name, config) {
+      const div = document.createElement('div');
+      div.className = 'param-input';
+      div.innerHTML = `
+        <label>${name} (${config.unit})</label>
+        <input type="number" 
+               value="${config.value}" 
+               min="${config.min}" 
+               max="${config.max}"
+               data-tag="${modelId}.${name}"
+               onchange="updateTag(this)">
+      `;
+      return div;
+    }
+
+    window.updateTag = function(input) {
+      const tagName = input.dataset.tag;
+      const value = parseFloat(input.value);
+      console.log(`Tag updated: ${tagName} = ${value}`);
+      // In full implementation, this would update the tag provider
+      // and trigger model regeneration
+    };
+
+    window.regenerateModel = function() {
+      alert('Model regeneration with current parameters would happen here!');
+    };
+
+    window.exportSTL = function() {
+      alert('STL export functionality - generates from current parameters');
+    };
+
+    window.resetCamera = function() {
+      console.log('Reset camera view');
+    };
+  </script>
+</body>
+</html>
