@@ -1,8 +1,10 @@
 {
-  "generated": "2025-12-16T06:18:47.534Z",
+  "generated": "2025-12-16T06:39:53.938Z",
+  "config_source": "index.yaml",
   "models": [
     {
-      "name": "mounting-bracket",
+      "id": "mounting-bracket",
+      "name": "Mounting Bracket",
       "filename": "mounting-bracket.stl",
       "size": 3,
       "params": {
@@ -12,11 +14,13 @@
         "holeCount": 2,
         "holeDiameter": 5,
         "holeSpacing": 30
-      }
+      },
+      "category": "brackets"
     },
     {
-      "name": "enclosure",
-      "filename": "enclosure.stl",
+      "id": "konomi-enclosure",
+      "name": "Konomi Enclosure",
+      "filename": "konomi-enclosure.stl",
       "size": 3,
       "params": {
         "width": 100,
@@ -27,10 +31,12 @@
         "ventHoleSpacing": 6,
         "mountingHoles": true,
         "cornerRadius": 3
-      }
+      },
+      "category": "konomiParts"
     },
     {
-      "name": "cable-clip",
+      "id": "cable-clip",
+      "name": "Cable Clip",
       "filename": "cable-clip.stl",
       "size": 3,
       "params": {
@@ -40,8 +46,36 @@
         "baseWidth": 15,
         "baseThickness": 3,
         "screwHoleDiameter": 3
-      }
+      },
+      "category": "accessories"
     }
   ],
-  "count": 3
+  "count": 3,
+  "categories": [
+    {
+      "id": "brackets",
+      "name": "Brackets",
+      "description": "Mounting brackets and supports",
+      "icon": "🔩"
+    },
+    {
+      "id": "konomiParts",
+      "name": "Konomi Parts",
+      "description": "Konomi Systems specific components",
+      "icon": "📦"
+    },
+    {
+      "id": "accessories",
+      "name": "Accessories",
+      "description": "Cable management and misc accessories",
+      "icon": "📎"
+    }
+  ],
+  "settings": {
+    "library_name": "STLayinAlive",
+    "library_description": "Konomi Systems 3D Printing STL Library",
+    "output_dir": "dist",
+    "docs_dir": "docs",
+    "base_url": "https://teslasolar.github.io/STLayinAlive"
+  }
 }
