@@ -6,6 +6,9 @@
 import { MountingBracket } from './brackets/mounting-bracket.js';
 import { KonomiEnclosure } from './konomi-parts/enclosure.js';
 import { CableClip } from './accessories/cable-clip.js';
+import { RoundToken } from './tokens/round-token.js';
+import { SquareToken } from './tokens/square-token.js';
+import { HexToken } from './tokens/hex-token.js';
 
 export const ModelRegistry = {
   brackets: {
@@ -16,6 +19,11 @@ export const ModelRegistry = {
   },
   accessories: {
     'cable-clip': CableClip
+  },
+  tokens: {
+    'round-token': RoundToken,
+    'square-token': SquareToken,
+    'hex-token': HexToken
   }
 };
 

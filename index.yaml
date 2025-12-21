@@ -26,6 +26,11 @@ categories:
     description: Cable management and misc accessories
     icon: "📎"
 
+  - id: tokens
+    name: Tokens
+    description: Gaming tokens, miniature bases, and board game pieces
+    icon: "🎲"
+
 # Model definitions
 models:
   # Mounting Bracket
@@ -187,6 +192,151 @@ models:
         min: 2
         max: 8
         description: Mounting screw hole diameter
+
+  # Round Token
+  - id: round-token
+    name: Round Token
+    category: tokens
+    description: Classic circular token/base for miniatures and board games
+    module: models/tokens/round-token.js
+    class: RoundToken
+    icon: "⚪"
+    tags:
+      - token
+      - base
+      - miniature
+      - round
+    params:
+      diameter:
+        value: 25
+        unit: mm
+        min: 10
+        max: 100
+        description: Token diameter
+      height:
+        value: 3
+        unit: mm
+        min: 1
+        max: 10
+        description: Token thickness
+      bevelRadius:
+        value: 0.8
+        unit: mm
+        min: 0
+        max: 3
+        description: Rounded edge radius
+      segments:
+        value: 64
+        unit: ""
+        min: 16
+        max: 128
+        description: Smoothness (higher = smoother)
+      grooveRings:
+        value: 0
+        unit: ""
+        min: 0
+        max: 5
+        description: Decorative concentric grooves
+      lipHeight:
+        value: 0
+        unit: mm
+        min: 0
+        max: 5
+        description: Optional raised lip height
+
+  # Square Token
+  - id: square-token
+    name: Square Token
+    category: tokens
+    description: Square/rectangular token for board games and markers
+    module: models/tokens/square-token.js
+    class: SquareToken
+    icon: "⬜"
+    tags:
+      - token
+      - base
+      - square
+      - tile
+    params:
+      size:
+        value: 25
+        unit: mm
+        min: 10
+        max: 100
+        description: Side length (square)
+      height:
+        value: 3
+        unit: mm
+        min: 1
+        max: 10
+        description: Token thickness
+      cornerRadius:
+        value: 2
+        unit: mm
+        min: 0
+        max: 10
+        description: Rounded corners
+      centerHole:
+        value: false
+        unit: ""
+        description: Add center mounting hole
+      holeDiameter:
+        value: 3
+        unit: mm
+        min: 1
+        max: 10
+        description: Mounting hole diameter
+
+  # Hex Token
+  - id: hex-token
+    name: Hex Token
+    category: tokens
+    description: Hexagonal token for hex-based games
+    module: models/tokens/hex-token.js
+    class: HexToken
+    icon: "⬡"
+    tags:
+      - token
+      - hex
+      - hexagon
+      - tile
+    params:
+      diameter:
+        value: 32
+        unit: mm
+        min: 15
+        max: 100
+        description: Flat-to-flat diameter
+      height:
+        value: 3
+        unit: mm
+        min: 1
+        max: 10
+        description: Token thickness
+      flatTop:
+        value: true
+        unit: ""
+        description: Flat top (true) vs pointy top (false)
+      centerHole:
+        value: false
+        unit: ""
+        description: Add center mounting hole
+      holeDiameter:
+        value: 3
+        unit: mm
+        min: 1
+        max: 10
+        description: Mounting hole diameter
+      numberSlot:
+        value: false
+        unit: ""
+        description: Slot for number tile (Catan-style)
+      slotDiameter:
+        value: 20
+        unit: mm
+        min: 10
+        max: 50
+        description: Number slot diameter
 
 # Print settings (optional metadata)
 print_settings:

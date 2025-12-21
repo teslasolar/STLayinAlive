@@ -6,6 +6,12 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/generate-stls.js",
+    "build:tokens": "node scripts/generate-tokens.js",
+    "build:tokens:gaming": "node scripts/generate-tokens.js --batch gaming",
+    "build:tokens:dnd": "node scripts/generate-tokens.js --batch dnd",
+    "build:tokens:warhammer": "node scripts/generate-tokens.js --batch warhammer",
+    "build:all": "npm run build && npm run build:tokens",
+    "tokens:list": "node scripts/generate-tokens.js --list",
     "dev": "node scripts/dev-server.js",
     "preview": "node scripts/preview.js",
     "deploy": "npm run build && gh-pages -d docs",

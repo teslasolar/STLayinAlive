@@ -1,5 +1,5 @@
 {
-  "generated": "2025-12-16T07:08:19.676Z",
+  "generated": "2025-12-21T22:51:56.689Z",
   "config_source": "index.yaml",
   "models": [
     {
@@ -48,9 +48,68 @@
         "screwHoleDiameter": 3
       },
       "category": "accessories"
+    },
+    {
+      "id": "round-token",
+      "name": "Round Token",
+      "filename": "round-token.stl",
+      "size": 3,
+      "params": {
+        "diameter": 25,
+        "height": 3,
+        "bevel": 0.5,
+        "textDepth": 0.5,
+        "lipHeight": 0,
+        "lipWidth": 1,
+        "hollow": false,
+        "hollowWall": 1.5,
+        "bevelRadius": 0.8,
+        "segments": 64,
+        "grooveRings": 0,
+        "grooveDepth": 0.3,
+        "grooveWidth": 0.5
+      },
+      "category": "tokens"
+    },
+    {
+      "id": "square-token",
+      "name": "Square Token",
+      "filename": "square-token.stl",
+      "size": 3,
+      "params": {
+        "size": 25,
+        "width": null,
+        "depth": null,
+        "height": 3,
+        "cornerRadius": 2,
+        "bevel": 0.5,
+        "chamfer": false,
+        "centerHole": false,
+        "holeDiameter": 3
+      },
+      "category": "tokens"
+    },
+    {
+      "id": "hex-token",
+      "name": "Hex Token",
+      "filename": "hex-token.stl",
+      "size": 3,
+      "params": {
+        "diameter": 32,
+        "height": 3,
+        "flatTop": true,
+        "bevel": 0.5,
+        "centerHole": false,
+        "holeDiameter": 3,
+        "edgeChamfer": 0,
+        "numberSlot": false,
+        "slotDiameter": 20,
+        "slotDepth": 1
+      },
+      "category": "tokens"
     }
   ],
-  "count": 3,
+  "count": 6,
   "categories": [
     {
       "id": "brackets",
@@ -69,6 +128,12 @@
       "name": "Accessories",
       "description": "Cable management and misc accessories",
       "icon": "📎"
+    },
+    {
+      "id": "tokens",
+      "name": "Tokens",
+      "description": "Gaming tokens, miniature bases, and board game pieces",
+      "icon": "🎲"
     }
   ],
   "settings": {

@@ -24,6 +24,12 @@
       "name": "Accessories",
       "description": "Cable management and misc accessories",
       "icon": "📎"
+    },
+    {
+      "id": "tokens",
+      "name": "Tokens",
+      "description": "Gaming tokens, miniature bases, and board game pieces",
+      "icon": "🎲"
     }
   ],
   "models": [
@@ -90,6 +96,72 @@
         "baseWidth": "15mm",
         "baseThickness": "3mm",
         "screwHoleDiameter": "3mm"
+      }
+    },
+    {
+      "id": "round-token",
+      "name": "Round Token",
+      "category": "tokens",
+      "description": "Classic circular token/base for miniatures and board games",
+      "icon": "⚪",
+      "tags": [
+        "token",
+        "base",
+        "miniature",
+        "round"
+      ],
+      "stlFile": "../dist/round-token.stl",
+      "params": {
+        "diameter": "25mm",
+        "height": "3mm",
+        "bevelRadius": "0.8mm",
+        "segments": "64",
+        "grooveRings": "0",
+        "lipHeight": "0mm"
+      }
+    },
+    {
+      "id": "square-token",
+      "name": "Square Token",
+      "category": "tokens",
+      "description": "Square/rectangular token for board games and markers",
+      "icon": "⬜",
+      "tags": [
+        "token",
+        "base",
+        "square",
+        "tile"
+      ],
+      "stlFile": "../dist/square-token.stl",
+      "params": {
+        "size": "25mm",
+        "height": "3mm",
+        "cornerRadius": "2mm",
+        "centerHole": "false",
+        "holeDiameter": "3mm"
+      }
+    },
+    {
+      "id": "hex-token",
+      "name": "Hex Token",
+      "category": "tokens",
+      "description": "Hexagonal token for hex-based games",
+      "icon": "⬡",
+      "tags": [
+        "token",
+        "hex",
+        "hexagon",
+        "tile"
+      ],
+      "stlFile": "../dist/hex-token.stl",
+      "params": {
+        "diameter": "32mm",
+        "height": "3mm",
+        "flatTop": "true",
+        "centerHole": "false",
+        "holeDiameter": "3mm",
+        "numberSlot": "false",
+        "slotDiameter": "20mm"
       }
     }
   ]

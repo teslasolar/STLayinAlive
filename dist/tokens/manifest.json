@@ -1,0 +1,93 @@
+{
+  "generated": "2025-12-21T22:51:54.446Z",
+  "tokens": [
+    {
+      "name": "round-token-dnd-small",
+      "type": "round",
+      "size": "dnd-small",
+      "filename": "round-token-dnd-small.stl",
+      "fileSize": 80,
+      "params": {
+        "diameter": 20,
+        "height": 3,
+        "bevel": 0.5,
+        "textDepth": 0.5,
+        "lipHeight": 0,
+        "lipWidth": 1,
+        "hollow": false,
+        "hollowWall": 1.5,
+        "bevelRadius": 0.8,
+        "segments": 64,
+        "grooveRings": 0,
+        "grooveDepth": 0.3,
+        "grooveWidth": 0.5
+      }
+    },
+    {
+      "name": "round-token-dnd-medium",
+      "type": "round",
+      "size": "dnd-medium",
+      "filename": "round-token-dnd-medium.stl",
+      "fileSize": 80,
+      "params": {
+        "diameter": 25,
+        "height": 3,
+        "bevel": 0.5,
+        "textDepth": 0.5,
+        "lipHeight": 0,
+        "lipWidth": 1,
+        "hollow": false,
+        "hollowWall": 1.5,
+        "bevelRadius": 0.8,
+        "segments": 64,
+        "grooveRings": 0,
+        "grooveDepth": 0.3,
+        "grooveWidth": 0.5
+      }
+    },
+    {
+      "name": "round-token-dnd-large",
+      "type": "round",
+      "size": "dnd-large",
+      "filename": "round-token-dnd-large.stl",
+      "fileSize": 80,
+      "params": {
+        "diameter": 50,
+        "height": 4,
+        "bevel": 0.5,
+        "textDepth": 0.5,
+        "lipHeight": 0,
+        "lipWidth": 1,
+        "hollow": false,
+        "hollowWall": 1.5,
+        "bevelRadius": 0.8,
+        "segments": 64,
+        "grooveRings": 0,
+        "grooveDepth": 0.3,
+        "grooveWidth": 0.5
+      }
+    },
+    {
+      "name": "round-token-dnd-huge",
+      "type": "round",
+      "size": "dnd-huge",
+      "filename": "round-token-dnd-huge.stl",
+      "fileSize": 80,
+      "params": {
+        "diameter": 75,
+        "height": 5,
+        "bevel": 0.5,
+        "textDepth": 0.5,
+        "lipHeight": 0,
+        "lipWidth": 1,
+        "hollow": false,
+        "hollowWall": 1.5,
+        "bevelRadius": 0.8,
+        "segments": 64,
+        "grooveRings": 0,
+        "grooveDepth": 0.3,
+        "grooveWidth": 0.5
+      }
+    }
+  ]
+}
