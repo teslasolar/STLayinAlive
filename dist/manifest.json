@@ -1,12 +1,12 @@
 {
-  "generated": "2025-12-21T22:51:56.689Z",
+  "generated": "2025-12-22T01:51:56.541Z",
   "config_source": "index.yaml",
   "models": [
     {
       "id": "mounting-bracket",
       "name": "Mounting Bracket",
       "filename": "mounting-bracket.stl",
-      "size": 3,
+      "size": 56684,
       "params": {
         "width": 50,
         "height": 30,
@@ -21,7 +21,7 @@
       "id": "konomi-enclosure",
       "name": "Konomi Enclosure",
       "filename": "konomi-enclosure.stl",
-      "size": 3,
+      "size": 203484,
       "params": {
         "width": 100,
         "depth": 80,
@@ -38,7 +38,7 @@
       "id": "cable-clip",
       "name": "Cable Clip",
       "filename": "cable-clip.stl",
-      "size": 3,
+      "size": 29284,
       "params": {
         "cableDiameter": 6,
         "clipThickness": 2,
@@ -53,7 +53,7 @@
       "id": "round-token",
       "name": "Round Token",
       "filename": "round-token.stl",
-      "size": 3,
+      "size": 12884,
       "params": {
         "diameter": 25,
         "height": 3,
@@ -75,7 +75,7 @@
       "id": "square-token",
       "name": "Square Token",
       "filename": "square-token.stl",
-      "size": 3,
+      "size": 11884,
       "params": {
         "size": 25,
         "width": null,
@@ -93,7 +93,7 @@
       "id": "hex-token",
       "name": "Hex Token",
       "filename": "hex-token.stl",
-      "size": 3,
+      "size": 1084,
       "params": {
         "diameter": 32,
         "height": 3,
@@ -107,9 +107,134 @@
         "slotDepth": 1
       },
       "category": "tokens"
+    },
+    {
+      "id": "dnd-medium-base",
+      "name": "D&D Medium Base",
+      "filename": "dnd-medium-base.stl",
+      "size": 12884,
+      "params": {
+        "diameter": 25,
+        "height": 3,
+        "bevel": 0.5,
+        "textDepth": 0.5,
+        "lipHeight": 0,
+        "lipWidth": 1,
+        "hollow": false,
+        "hollowWall": 1.5,
+        "bevelRadius": 1,
+        "segments": 64,
+        "grooveRings": 0,
+        "grooveDepth": 0.3,
+        "grooveWidth": 0.5
+      },
+      "category": "tokens"
+    },
+    {
+      "id": "dnd-large-base",
+      "name": "D&D Large Base",
+      "filename": "dnd-large-base.stl",
+      "size": 12884,
+      "params": {
+        "diameter": 50,
+        "height": 4,
+        "bevel": 0.5,
+        "textDepth": 0.5,
+        "lipHeight": 0,
+        "lipWidth": 1,
+        "hollow": false,
+        "hollowWall": 1.5,
+        "bevelRadius": 1.5,
+        "segments": 64,
+        "grooveRings": 0,
+        "grooveDepth": 0.3,
+        "grooveWidth": 0.5
+      },
+      "category": "tokens"
+    },
+    {
+      "id": "warhammer-32mm",
+      "name": "Warhammer 32mm Base",
+      "filename": "warhammer-32mm.stl",
+      "size": 12884,
+      "params": {
+        "diameter": 32,
+        "height": 3,
+        "bevel": 0.5,
+        "textDepth": 0.5,
+        "lipHeight": 0,
+        "lipWidth": 1,
+        "hollow": false,
+        "hollowWall": 1.5,
+        "bevelRadius": 0.5,
+        "segments": 64,
+        "grooveRings": 0,
+        "grooveDepth": 0.3,
+        "grooveWidth": 0.5
+      },
+      "category": "tokens"
+    },
+    {
+      "id": "poker-chip",
+      "name": "Poker Chip Token",
+      "filename": "poker-chip.stl",
+      "size": 89684,
+      "params": {
+        "diameter": 39,
+        "height": 3.3,
+        "bevel": 0.5,
+        "textDepth": 0.5,
+        "lipHeight": 0,
+        "lipWidth": 1,
+        "hollow": false,
+        "hollowWall": 1.5,
+        "bevelRadius": 0.8,
+        "segments": 64,
+        "grooveRings": 2,
+        "grooveDepth": 0.3,
+        "grooveWidth": 0.5
+      },
+      "category": "tokens"
+    },
+    {
+      "id": "catan-hex",
+      "name": "Catan Hex Tile",
+      "filename": "catan-hex.stl",
+      "size": 11484,
+      "params": {
+        "diameter": 72,
+        "height": 3,
+        "flatTop": true,
+        "bevel": 0.5,
+        "centerHole": false,
+        "holeDiameter": 3,
+        "edgeChamfer": 0,
+        "numberSlot": true,
+        "slotDiameter": 25,
+        "slotDepth": 1
+      },
+      "category": "tokens"
+    },
+    {
+      "id": "chess-base",
+      "name": "Chess Piece Base",
+      "filename": "chess-base.stl",
+      "size": 26084,
+      "params": {
+        "size": 28,
+        "width": null,
+        "depth": null,
+        "height": 5,
+        "cornerRadius": 3,
+        "bevel": 0.5,
+        "chamfer": false,
+        "centerHole": true,
+        "holeDiameter": 15
+      },
+      "category": "tokens"
     }
   ],
-  "count": 6,
+  "count": 12,
   "categories": [
     {
       "id": "brackets",

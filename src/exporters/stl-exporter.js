@@ -21,6 +21,39 @@ export function exportSTL(geometry, options = {}) {
   const exportOptions = { ...defaultOptions, ...options };
   const rawData = serialize(exportOptions, geometry);
 
+  // For binary format, serialize returns array of ArrayBuffers that need concatenation
+  if (exportOptions.binary && Array.isArray(rawData)) {
+    // Calculate total size
+    let totalSize = 0;
+    for (const chunk of rawData) {
+      if (chunk instanceof ArrayBuffer) {
+        totalSize += chunk.byteLength;
+      } else if (ArrayBuffer.isView(chunk)) {
+        totalSize += chunk.byteLength;
+      }
+    }
+
+    // Concatenate all chunks
+    const result = new Uint8Array(totalSize);
+    let offset = 0;
+    for (const chunk of rawData) {
+      if (chunk instanceof ArrayBuffer) {
+        result.set(new Uint8Array(chunk), offset);
+        offset += chunk.byteLength;
+      } else if (ArrayBuffer.isView(chunk)) {
+        result.set(new Uint8Array(chunk.buffer, chunk.byteOffset, chunk.byteLength), offset);
+        offset += chunk.byteLength;
+      }
+    }
+
+    return result.buffer;
+  }
+
+  // For ASCII format, just join strings
+  if (Array.isArray(rawData)) {
+    return rawData.join('');
+  }
+
   return rawData;
 }
 
@@ -49,7 +82,18 @@ export function saveSTL(geometry, filename) {
 export async function saveSTLNode(geometry, filepath) {
   const fs = await import('fs/promises');
   const stlData = exportSTL(geometry, { binary: true });
-  await fs.writeFile(filepath, Buffer.from(stlData));
+
+  // Handle ArrayBuffer conversion properly
+  let buffer;
+  if (stlData instanceof ArrayBuffer) {
+    buffer = Buffer.from(new Uint8Array(stlData));
+  } else if (ArrayBuffer.isView(stlData)) {
+    buffer = Buffer.from(stlData.buffer, stlData.byteOffset, stlData.byteLength);
+  } else {
+    buffer = Buffer.from(stlData);
+  }
+
+  await fs.writeFile(filepath, buffer);
 }
 
 export default {

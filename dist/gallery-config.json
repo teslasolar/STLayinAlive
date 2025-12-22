@@ -163,6 +163,134 @@
         "numberSlot": "false",
         "slotDiameter": "20mm"
       }
+    },
+    {
+      "id": "dnd-medium-base",
+      "name": "D&D Medium Base",
+      "category": "tokens",
+      "description": "Standard 25mm base for medium creatures (humans, elves, dwarves)",
+      "icon": "🧙",
+      "tags": [
+        "token",
+        "base",
+        "dnd",
+        "miniature",
+        "medium"
+      ],
+      "stlFile": "../dist/dnd-medium-base.stl",
+      "params": {
+        "diameter": "25mm",
+        "height": "3mm",
+        "bevelRadius": "1mm",
+        "segments": "64"
+      }
+    },
+    {
+      "id": "dnd-large-base",
+      "name": "D&D Large Base",
+      "category": "tokens",
+      "description": "50mm base for large creatures (ogres, horses, dire wolves)",
+      "icon": "🐉",
+      "tags": [
+        "token",
+        "base",
+        "dnd",
+        "miniature",
+        "large"
+      ],
+      "stlFile": "../dist/dnd-large-base.stl",
+      "params": {
+        "diameter": "50mm",
+        "height": "4mm",
+        "bevelRadius": "1.5mm",
+        "segments": "64"
+      }
+    },
+    {
+      "id": "warhammer-32mm",
+      "name": "Warhammer 32mm Base",
+      "category": "tokens",
+      "description": "Standard 32mm round base for infantry",
+      "icon": "⚔️",
+      "tags": [
+        "token",
+        "base",
+        "warhammer",
+        "40k"
+      ],
+      "stlFile": "../dist/warhammer-32mm.stl",
+      "params": {
+        "diameter": "32mm",
+        "height": "3mm",
+        "bevelRadius": "0.5mm",
+        "segments": "64"
+      }
+    },
+    {
+      "id": "poker-chip",
+      "name": "Poker Chip Token",
+      "category": "tokens",
+      "description": "Casino-style poker chip for board games",
+      "icon": "🎰",
+      "tags": [
+        "token",
+        "chip",
+        "poker",
+        "casino",
+        "boardgame"
+      ],
+      "stlFile": "../dist/poker-chip.stl",
+      "params": {
+        "diameter": "39mm",
+        "height": "3.3mm",
+        "bevelRadius": "0.8mm",
+        "grooveRings": "2",
+        "segments": "64"
+      }
+    },
+    {
+      "id": "catan-hex",
+      "name": "Catan Hex Tile",
+      "category": "tokens",
+      "description": "Settlers of Catan style hex tile with number slot",
+      "icon": "🏝️",
+      "tags": [
+        "token",
+        "hex",
+        "catan",
+        "boardgame",
+        "tile"
+      ],
+      "stlFile": "../dist/catan-hex.stl",
+      "params": {
+        "diameter": "72mm",
+        "height": "3mm",
+        "flatTop": "true",
+        "numberSlot": "true",
+        "slotDiameter": "25mm",
+        "slotDepth": "1mm"
+      }
+    },
+    {
+      "id": "chess-base",
+      "name": "Chess Piece Base",
+      "category": "tokens",
+      "description": "Weighted base for chess pieces",
+      "icon": "♟️",
+      "tags": [
+        "token",
+        "base",
+        "chess",
+        "square"
+      ],
+      "stlFile": "../dist/chess-base.stl",
+      "params": {
+        "size": "28mm",
+        "height": "5mm",
+        "cornerRadius": "3mm",
+        "centerHole": "true",
+        "holeDiameter": "15mm"
+      }
     }
   ]
 }

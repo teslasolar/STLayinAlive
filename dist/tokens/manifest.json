@@ -1,15 +1,15 @@
 {
-  "generated": "2025-12-21T22:51:54.446Z",
+  "generated": "2025-12-22T01:52:56.956Z",
   "tokens": [
     {
-      "name": "round-token-dnd-small",
+      "name": "round-token-micro",
       "type": "round",
-      "size": "dnd-small",
-      "filename": "round-token-dnd-small.stl",
-      "fileSize": 80,
+      "size": "micro",
+      "filename": "round-token-micro.stl",
+      "fileSize": 12884,
       "params": {
-        "diameter": 20,
-        "height": 3,
+        "diameter": 15,
+        "height": 2,
         "bevel": 0.5,
         "textDepth": 0.5,
         "lipHeight": 0,
@@ -24,11 +24,33 @@
       }
     },
     {
-      "name": "round-token-dnd-medium",
+      "name": "round-token-tiny",
       "type": "round",
-      "size": "dnd-medium",
-      "filename": "round-token-dnd-medium.stl",
-      "fileSize": 80,
+      "size": "tiny",
+      "filename": "round-token-tiny.stl",
+      "fileSize": 12884,
+      "params": {
+        "diameter": 20,
+        "height": 2,
+        "bevel": 0.5,
+        "textDepth": 0.5,
+        "lipHeight": 0,
+        "lipWidth": 1,
+        "hollow": false,
+        "hollowWall": 1.5,
+        "bevelRadius": 0.8,
+        "segments": 64,
+        "grooveRings": 0,
+        "grooveDepth": 0.3,
+        "grooveWidth": 0.5
+      }
+    },
+    {
+      "name": "round-token-small",
+      "type": "round",
+      "size": "small",
+      "filename": "round-token-small.stl",
+      "fileSize": 12884,
       "params": {
         "diameter": 25,
         "height": 3,
@@ -46,11 +68,55 @@
       }
     },
     {
-      "name": "round-token-dnd-large",
+      "name": "round-token-medium",
       "type": "round",
-      "size": "dnd-large",
-      "filename": "round-token-dnd-large.stl",
-      "fileSize": 80,
+      "size": "medium",
+      "filename": "round-token-medium.stl",
+      "fileSize": 12884,
+      "params": {
+        "diameter": 32,
+        "height": 3,
+        "bevel": 0.5,
+        "textDepth": 0.5,
+        "lipHeight": 0,
+        "lipWidth": 1,
+        "hollow": false,
+        "hollowWall": 1.5,
+        "bevelRadius": 0.8,
+        "segments": 64,
+        "grooveRings": 0,
+        "grooveDepth": 0.3,
+        "grooveWidth": 0.5
+      }
+    },
+    {
+      "name": "round-token-large",
+      "type": "round",
+      "size": "large",
+      "filename": "round-token-large.stl",
+      "fileSize": 12884,
+      "params": {
+        "diameter": 40,
+        "height": 4,
+        "bevel": 0.5,
+        "textDepth": 0.5,
+        "lipHeight": 0,
+        "lipWidth": 1,
+        "hollow": false,
+        "hollowWall": 1.5,
+        "bevelRadius": 0.8,
+        "segments": 64,
+        "grooveRings": 0,
+        "grooveDepth": 0.3,
+        "grooveWidth": 0.5
+      }
+    },
+    {
+      "name": "round-token-xlarge",
+      "type": "round",
+      "size": "xlarge",
+      "filename": "round-token-xlarge.stl",
+      "fileSize": 12884,
       "params": {
         "diameter": 50,
         "height": 4,
@@ -68,25 +134,373 @@
       }
     },
     {
-      "name": "round-token-dnd-huge",
-      "type": "round",
-      "size": "dnd-huge",
-      "filename": "round-token-dnd-huge.stl",
-      "fileSize": 80,
+      "name": "square-token-micro",
+      "type": "square",
+      "size": "micro",
+      "filename": "square-token-micro.stl",
+      "fileSize": 11884,
       "params": {
-        "diameter": 75,
-        "height": 5,
+        "size": 15,
+        "width": null,
+        "depth": null,
+        "height": 2,
+        "cornerRadius": 2,
         "bevel": 0.5,
-        "textDepth": 0.5,
-        "lipHeight": 0,
-        "lipWidth": 1,
-        "hollow": false,
-        "hollowWall": 1.5,
-        "bevelRadius": 0.8,
-        "segments": 64,
-        "grooveRings": 0,
-        "grooveDepth": 0.3,
-        "grooveWidth": 0.5
+        "chamfer": false,
+        "centerHole": false,
+        "holeDiameter": 3
+      }
+    },
+    {
+      "name": "square-token-tiny",
+      "type": "square",
+      "size": "tiny",
+      "filename": "square-token-tiny.stl",
+      "fileSize": 11884,
+      "params": {
+        "size": 20,
+        "width": null,
+        "depth": null,
+        "height": 2,
+        "cornerRadius": 2,
+        "bevel": 0.5,
+        "chamfer": false,
+        "centerHole": false,
+        "holeDiameter": 3
+      }
+    },
+    {
+      "name": "square-token-small",
+      "type": "square",
+      "size": "small",
+      "filename": "square-token-small.stl",
+      "fileSize": 11884,
+      "params": {
+        "size": 25,
+        "width": null,
+        "depth": null,
+        "height": 3,
+        "cornerRadius": 2,
+        "bevel": 0.5,
+        "chamfer": false,
+        "centerHole": false,
+        "holeDiameter": 3
+      }
+    },
+    {
+      "name": "square-token-medium",
+      "type": "square",
+      "size": "medium",
+      "filename": "square-token-medium.stl",
+      "fileSize": 11884,
+      "params": {
+        "size": 32,
+        "width": null,
+        "depth": null,
+        "height": 3,
+        "cornerRadius": 2,
+        "bevel": 0.5,
+        "chamfer": false,
+        "centerHole": false,
+        "holeDiameter": 3
+      }
+    },
+    {
+      "name": "square-token-large",
+      "type": "square",
+      "size": "large",
+      "filename": "square-token-large.stl",
+      "fileSize": 11884,
+      "params": {
+        "size": 40,
+        "width": null,
+        "depth": null,
+        "height": 4,
+        "cornerRadius": 2,
+        "bevel": 0.5,
+        "chamfer": false,
+        "centerHole": false,
+        "holeDiameter": 3
+      }
+    },
+    {
+      "name": "square-token-xlarge",
+      "type": "square",
+      "size": "xlarge",
+      "filename": "square-token-xlarge.stl",
+      "fileSize": 11884,
+      "params": {
+        "size": 50,
+        "width": null,
+        "depth": null,
+        "height": 4,
+        "cornerRadius": 2,
+        "bevel": 0.5,
+        "chamfer": false,
+        "centerHole": false,
+        "holeDiameter": 3
+      }
+    },
+    {
+      "name": "square-token-chess-small",
+      "type": "square",
+      "size": "chess-small",
+      "filename": "square-token-chess-small.stl",
+      "fileSize": 11884,
+      "params": {
+        "size": 25,
+        "width": null,
+        "depth": null,
+        "height": 5,
+        "cornerRadius": 2,
+        "bevel": 0.5,
+        "chamfer": false,
+        "centerHole": false,
+        "holeDiameter": 3
+      }
+    },
+    {
+      "name": "square-token-chess-large",
+      "type": "square",
+      "size": "chess-large",
+      "filename": "square-token-chess-large.stl",
+      "fileSize": 11884,
+      "params": {
+        "size": 32,
+        "width": null,
+        "depth": null,
+        "height": 6,
+        "cornerRadius": 2,
+        "bevel": 0.5,
+        "chamfer": false,
+        "centerHole": false,
+        "holeDiameter": 3
+      }
+    },
+    {
+      "name": "square-token-tile-1inch",
+      "type": "square",
+      "size": "tile-1inch",
+      "filename": "square-token-tile-1inch.stl",
+      "fileSize": 11884,
+      "params": {
+        "size": 25.4,
+        "width": null,
+        "depth": null,
+        "height": 3,
+        "cornerRadius": 2,
+        "bevel": 0.5,
+        "chamfer": false,
+        "centerHole": false,
+        "holeDiameter": 3
+      }
+    },
+    {
+      "name": "square-token-tile-2inch",
+      "type": "square",
+      "size": "tile-2inch",
+      "filename": "square-token-tile-2inch.stl",
+      "fileSize": 11884,
+      "params": {
+        "size": 50.8,
+        "width": null,
+        "depth": null,
+        "height": 4,
+        "cornerRadius": 2,
+        "bevel": 0.5,
+        "chamfer": false,
+        "centerHole": false,
+        "holeDiameter": 3
+      }
+    },
+    {
+      "name": "hex-token-micro",
+      "type": "hex",
+      "size": "micro",
+      "filename": "hex-token-micro.stl",
+      "fileSize": 1084,
+      "params": {
+        "diameter": 15,
+        "height": 2,
+        "flatTop": true,
+        "bevel": 0.5,
+        "centerHole": false,
+        "holeDiameter": 3,
+        "edgeChamfer": 0,
+        "numberSlot": false,
+        "slotDiameter": 20,
+        "slotDepth": 1
+      }
+    },
+    {
+      "name": "hex-token-tiny",
+      "type": "hex",
+      "size": "tiny",
+      "filename": "hex-token-tiny.stl",
+      "fileSize": 1084,
+      "params": {
+        "diameter": 20,
+        "height": 2,
+        "flatTop": true,
+        "bevel": 0.5,
+        "centerHole": false,
+        "holeDiameter": 3,
+        "edgeChamfer": 0,
+        "numberSlot": false,
+        "slotDiameter": 20,
+        "slotDepth": 1
+      }
+    },
+    {
+      "name": "hex-token-small",
+      "type": "hex",
+      "size": "small",
+      "filename": "hex-token-small.stl",
+      "fileSize": 1084,
+      "params": {
+        "diameter": 25,
+        "height": 3,
+        "flatTop": true,
+        "bevel": 0.5,
+        "centerHole": false,
+        "holeDiameter": 3,
+        "edgeChamfer": 0,
+        "numberSlot": false,
+        "slotDiameter": 20,
+        "slotDepth": 1
+      }
+    },
+    {
+      "name": "hex-token-medium",
+      "type": "hex",
+      "size": "medium",
+      "filename": "hex-token-medium.stl",
+      "fileSize": 1084,
+      "params": {
+        "diameter": 32,
+        "height": 3,
+        "flatTop": true,
+        "bevel": 0.5,
+        "centerHole": false,
+        "holeDiameter": 3,
+        "edgeChamfer": 0,
+        "numberSlot": false,
+        "slotDiameter": 20,
+        "slotDepth": 1
+      }
+    },
+    {
+      "name": "hex-token-large",
+      "type": "hex",
+      "size": "large",
+      "filename": "hex-token-large.stl",
+      "fileSize": 1084,
+      "params": {
+        "diameter": 40,
+        "height": 4,
+        "flatTop": true,
+        "bevel": 0.5,
+        "centerHole": false,
+        "holeDiameter": 3,
+        "edgeChamfer": 0,
+        "numberSlot": false,
+        "slotDiameter": 20,
+        "slotDepth": 1
+      }
+    },
+    {
+      "name": "hex-token-xlarge",
+      "type": "hex",
+      "size": "xlarge",
+      "filename": "hex-token-xlarge.stl",
+      "fileSize": 1084,
+      "params": {
+        "diameter": 50,
+        "height": 4,
+        "flatTop": true,
+        "bevel": 0.5,
+        "centerHole": false,
+        "holeDiameter": 3,
+        "edgeChamfer": 0,
+        "numberSlot": false,
+        "slotDiameter": 20,
+        "slotDepth": 1
+      }
+    },
+    {
+      "name": "hex-token-catan",
+      "type": "hex",
+      "size": "catan",
+      "filename": "hex-token-catan.stl",
+      "fileSize": 1084,
+      "params": {
+        "diameter": 72,
+        "height": 3,
+        "flatTop": true,
+        "bevel": 0.5,
+        "centerHole": false,
+        "holeDiameter": 3,
+        "edgeChamfer": 0,
+        "numberSlot": false,
+        "slotDiameter": 20,
+        "slotDepth": 1
+      }
+    },
+    {
+      "name": "hex-token-battletech",
+      "type": "hex",
+      "size": "battletech",
+      "filename": "hex-token-battletech.stl",
+      "fileSize": 1084,
+      "params": {
+        "diameter": 32,
+        "height": 3,
+        "flatTop": true,
+        "bevel": 0.5,
+        "centerHole": false,
+        "holeDiameter": 3,
+        "edgeChamfer": 0,
+        "numberSlot": false,
+        "slotDiameter": 20,
+        "slotDepth": 1
+      }
+    },
+    {
+      "name": "hex-token-hex-1inch",
+      "type": "hex",
+      "size": "hex-1inch",
+      "filename": "hex-token-hex-1inch.stl",
+      "fileSize": 1084,
+      "params": {
+        "diameter": 25.4,
+        "height": 3,
+        "flatTop": true,
+        "bevel": 0.5,
+        "centerHole": false,
+        "holeDiameter": 3,
+        "edgeChamfer": 0,
+        "numberSlot": false,
+        "slotDiameter": 20,
+        "slotDepth": 1
+      }
+    },
+    {
+      "name": "hex-token-hex-1.5inch",
+      "type": "hex",
+      "size": "hex-1.5inch",
+      "filename": "hex-token-hex-1.5inch.stl",
+      "fileSize": 1084,
+      "params": {
+        "diameter": 38.1,
+        "height": 3,
+        "flatTop": true,
+        "bevel": 0.5,
+        "centerHole": false,
+        "holeDiameter": 3,
+        "edgeChamfer": 0,
+        "numberSlot": false,
+        "slotDiameter": 20,
+        "slotDepth": 1
       }
     }
   ]

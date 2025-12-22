@@ -338,6 +338,212 @@ models:
         max: 50
         description: Number slot diameter
 
+  # D&D Medium Base (25mm)
+  - id: dnd-medium-base
+    name: D&D Medium Base
+    category: tokens
+    description: Standard 25mm base for medium creatures (humans, elves, dwarves)
+    module: models/tokens/round-token.js
+    class: RoundToken
+    icon: "🧙"
+    tags:
+      - token
+      - base
+      - dnd
+      - miniature
+      - medium
+    params:
+      diameter:
+        value: 25
+        unit: mm
+        description: Standard D&D medium base
+      height:
+        value: 3
+        unit: mm
+        description: Base thickness
+      bevelRadius:
+        value: 1
+        unit: mm
+        description: Edge bevel
+      segments:
+        value: 64
+        unit: ""
+        description: Smoothness
+
+  # D&D Large Base (50mm)
+  - id: dnd-large-base
+    name: D&D Large Base
+    category: tokens
+    description: 50mm base for large creatures (ogres, horses, dire wolves)
+    module: models/tokens/round-token.js
+    class: RoundToken
+    icon: "🐉"
+    tags:
+      - token
+      - base
+      - dnd
+      - miniature
+      - large
+    params:
+      diameter:
+        value: 50
+        unit: mm
+        description: D&D large base
+      height:
+        value: 4
+        unit: mm
+        description: Base thickness
+      bevelRadius:
+        value: 1.5
+        unit: mm
+        description: Edge bevel
+      segments:
+        value: 64
+        unit: ""
+        description: Smoothness
+
+  # Warhammer 32mm Base
+  - id: warhammer-32mm
+    name: Warhammer 32mm Base
+    category: tokens
+    description: Standard 32mm round base for infantry
+    module: models/tokens/round-token.js
+    class: RoundToken
+    icon: "⚔️"
+    tags:
+      - token
+      - base
+      - warhammer
+      - 40k
+    params:
+      diameter:
+        value: 32
+        unit: mm
+        description: Warhammer standard base
+      height:
+        value: 3
+        unit: mm
+        description: Base thickness
+      bevelRadius:
+        value: 0.5
+        unit: mm
+        description: Subtle edge bevel
+      segments:
+        value: 64
+        unit: ""
+        description: Smoothness
+
+  # Poker Chip Token
+  - id: poker-chip
+    name: Poker Chip Token
+    category: tokens
+    description: Casino-style poker chip for board games
+    module: models/tokens/round-token.js
+    class: RoundToken
+    icon: "🎰"
+    tags:
+      - token
+      - chip
+      - poker
+      - casino
+      - boardgame
+    params:
+      diameter:
+        value: 39
+        unit: mm
+        description: Standard poker chip diameter
+      height:
+        value: 3.3
+        unit: mm
+        description: Standard chip thickness
+      bevelRadius:
+        value: 0.8
+        unit: mm
+        description: Edge bevel
+      grooveRings:
+        value: 2
+        unit: ""
+        description: Decorative rings
+      segments:
+        value: 64
+        unit: ""
+        description: Smoothness
+
+  # Catan Hex Tile
+  - id: catan-hex
+    name: Catan Hex Tile
+    category: tokens
+    description: Settlers of Catan style hex tile with number slot
+    module: models/tokens/hex-token.js
+    class: HexToken
+    icon: "🏝️"
+    tags:
+      - token
+      - hex
+      - catan
+      - boardgame
+      - tile
+    params:
+      diameter:
+        value: 72
+        unit: mm
+        description: Catan tile size
+      height:
+        value: 3
+        unit: mm
+        description: Tile thickness
+      flatTop:
+        value: true
+        unit: ""
+        description: Flat-top orientation
+      numberSlot:
+        value: true
+        unit: ""
+        description: Slot for number chit
+      slotDiameter:
+        value: 25
+        unit: mm
+        description: Number slot size
+      slotDepth:
+        value: 1
+        unit: mm
+        description: Slot depth
+
+  # Chess Piece Base
+  - id: chess-base
+    name: Chess Piece Base
+    category: tokens
+    description: Weighted base for chess pieces
+    module: models/tokens/square-token.js
+    class: SquareToken
+    icon: "♟️"
+    tags:
+      - token
+      - base
+      - chess
+      - square
+    params:
+      size:
+        value: 28
+        unit: mm
+        description: Base size
+      height:
+        value: 5
+        unit: mm
+        description: Base thickness
+      cornerRadius:
+        value: 3
+        unit: mm
+        description: Rounded corners
+      centerHole:
+        value: true
+        unit: ""
+        description: Weight cavity
+      holeDiameter:
+        value: 15
+        unit: mm
+        description: Cavity diameter
+
 # Print settings (optional metadata)
 print_settings:
   default_material: PLA

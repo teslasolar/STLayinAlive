@@ -144,7 +144,25 @@ function listTokens() {
  */
 function exportToSTL(geometry, filename) {
   const stlData = serialize({ binary: true }, geometry);
-  const buffer = Buffer.from(stlData[0]);
+
+  // Concatenate all ArrayBuffer chunks
+  let totalSize = 0;
+  for (const chunk of stlData) {
+    if (chunk instanceof ArrayBuffer) {
+      totalSize += chunk.byteLength;
+    }
+  }
+
+  const result = new Uint8Array(totalSize);
+  let offset = 0;
+  for (const chunk of stlData) {
+    if (chunk instanceof ArrayBuffer) {
+      result.set(new Uint8Array(chunk), offset);
+      offset += chunk.byteLength;
+    }
+  }
+
+  const buffer = Buffer.from(result.buffer);
   fs.writeFileSync(filename, buffer);
   return buffer.length;
 }
